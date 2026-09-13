@@ -501,13 +501,13 @@ export const SCHEDULE = [
 ]
 
 export const MAP_NODES = [
-  { id: "entry", label: "ENTRY", x: 12, y: 58, copy: "Wristband scan. Lantern given at the gate." },
-  { id: "food", label: "FOOD STREET", x: 32, y: 38, copy: "Tandoor line, chaat steam, kesar rose fizz." },
-  { id: "fashion", label: "FASHION ROW", x: 52, y: 22, copy: "Runway strip under hanging wires." },
-  { id: "art", label: "ART ALLEY", x: 70, y: 40, copy: "Installations in shipping-bay shadows." },
-  { id: "stage", label: "MAIN STAGE", x: 58, y: 68, copy: "The square. The speakers. The night." },
-  { id: "arcade", label: "ARCADE", x: 38, y: 78, copy: "Cork guns, gold balloons, discount codes." },
-  { id: "exit", label: "EXIT", x: 86, y: 72, copy: "Keep the passport. The night keeps you." },
+  { id: "entry", label: "ENTRY", x: 14, y: 52, copy: "Wristband scan. Lantern given at the gate." },
+  { id: "food", label: "FOOD STREET", x: 32, y: 28, copy: "Tandoor line, chaat steam, kesar rose fizz." },
+  { id: "fashion", label: "FASHION ROW", x: 52, y: 18, copy: "Runway strip under hanging wires." },
+  { id: "art", label: "ART ALLEY", x: 74, y: 30, copy: "Installations in shipping-bay shadows." },
+  { id: "stage", label: "MAIN STAGE", x: 62, y: 58, copy: "The square. The speakers. The night." },
+  { id: "arcade", label: "ARCADE", x: 38, y: 72, copy: "Cork guns, gold balloons, discount codes." },
+  { id: "exit", label: "EXIT", x: 84, y: 76, copy: "Keep the passport. The night keeps you." },
 ]
 
 export const STAMPS = [

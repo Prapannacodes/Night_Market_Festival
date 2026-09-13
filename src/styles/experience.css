@@ -96,9 +96,9 @@
   margin: 0.2rem 0 1rem;
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(4.6rem, 16vw, 13rem);
-  line-height: 0.78;
-  letter-spacing: -0.06em;
+  font-size: clamp(3.2rem, 8.5vw, 6.8rem);
+  line-height: 0.84;
+  letter-spacing: -0.04em;
 }
 
 .hero__title span {
@@ -911,10 +911,14 @@
 
 .map__svg {
   width: 100%;
+  aspect-ratio: 1;
   background:
-    radial-gradient(circle at 20% 20%, rgba(255, 46, 200, 0.08), transparent 30%),
+    radial-gradient(circle at 62% 58%, rgba(255, 46, 200, 0.1), transparent 40%),
+    radial-gradient(circle at 20% 20%, rgba(42, 240, 255, 0.08), transparent 30%),
     #07040c;
-  border: 1px solid rgba(42, 240, 255, 0.2);
+  border: 1px solid rgba(42, 240, 255, 0.25);
+  border-radius: 6px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
 }
 
 .map__pulse {
@@ -1226,7 +1230,7 @@ html[data-night="after"] body {
   }
 
   .hero__title {
-    font-size: clamp(3.4rem, 20vw, 6rem);
+    font-size: clamp(2.6rem, 12vw, 4.4rem);
   }
 }
 
