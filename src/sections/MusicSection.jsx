@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react"
+import SectionBackground from "../components/SectionBackground"
 import { LINEUP } from "../data/content"
 import { useExperience } from "../context/ExperienceContext"
 import { marketRuntime } from "../runtime/marketRuntime"
@@ -57,6 +58,7 @@ export default function MusicSection() {
 
   return (
     <section id="lineup" className="music" ref={root}>
+      <SectionBackground image="/images/music-bg.jpg" opacity={0.48} />
       <p className="kicker">TONIGHT'S FREQUENCY</p>
       <h2 className="display">STAGE IS LIVE.</h2>
       <div className="music__stage">

@@ -1,11 +1,14 @@
 import CustomCursor from "./components/CustomCursor"
 import GrainOverlay from "./components/GrainOverlay"
 import Loader from "./components/Loader"
+import MarketToast from "./components/MarketToast"
 import Navigation from "./components/Navigation"
 import NightModeToggle from "./components/NightModeToggle"
 import PassportDock from "./components/PassportDock"
+import PaymentModal from "./components/PaymentModal"
 import { SmoothScroll } from "./components/SmoothScroll"
-import { ExperienceProvider } from "./context/ExperienceContext"
+import VendorSidebar from "./components/VendorSidebar"
+import { ExperienceProvider, useExperience } from "./context/ExperienceContext"
 import ArcadeGame from "./sections/ArcadeGame"
 import ArtSection from "./sections/ArtSection"
 import CategoryGallery from "./sections/CategoryGallery"
@@ -22,6 +25,45 @@ import Schedule from "./sections/Schedule"
 import TicketSection from "./sections/TicketSection"
 import VendorSection from "./sections/VendorSection"
 import "./styles/experience.css"
+
+function ExperienceModals() {
+  const {
+    activeVendorDrawer,
+    setActiveVendorDrawer,
+    activePassPayment,
+    setActivePassPayment,
+    unlockStamp,
+    setMarketToast,
+  } = useExperience()
+
+  const handlePaymentSuccess = (pass, bookingRef) => {
+    setActivePassPayment(null)
+    unlockStamp("foodie")
+    setMarketToast({
+      title: "PASS CONFIRMED!",
+      message: `${pass.name} (${bookingRef}) is active. See you at the Night Market!`,
+    })
+    const visitEl = document.getElementById("visit") || document.getElementById("hero")
+    if (visitEl) {
+      visitEl.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
+  return (
+    <>
+      <VendorSidebar
+        vendor={activeVendorDrawer}
+        onClose={() => setActiveVendorDrawer(null)}
+      />
+      <PaymentModal
+        pass={activePassPayment}
+        onClose={() => setActivePassPayment(null)}
+        onPaymentSuccess={handlePaymentSuccess}
+      />
+      <MarketToast />
+    </>
+  )
+}
 
 export default function App() {
   return (
@@ -49,6 +91,7 @@ export default function App() {
           <Footer />
           <NightModeToggle />
           <PassportDock />
+          <ExperienceModals />
         </div>
         <CustomCursor />
         <GrainOverlay />

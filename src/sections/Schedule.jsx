@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import SectionBackground from "../components/SectionBackground"
 import { SCHEDULE } from "../data/content"
 import { useReducedMotion } from "../hooks/useReducedMotion"
 
@@ -27,6 +28,7 @@ export default function Schedule() {
 
   return (
     <section className="time" ref={root}>
+      <SectionBackground image="/images/schedule-bg.jpg" opacity={0.45} />
       <p className="kicker">THE NIGHT UNFOLDS.</p>
       <h2 className="display">FOLLOW THE HOUR.</h2>
       <div className="time__line" aria-hidden="true">

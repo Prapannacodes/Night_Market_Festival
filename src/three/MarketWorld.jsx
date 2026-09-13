@@ -220,8 +220,6 @@ export function MarketWorld({ mobile }) {
 
   return (
     <group ref={camGroup}>
-      <color attach="background" args={["#050308"]} />
-      <fog attach="fog" args={[marketRuntime.night ? "#07040c" : "#09060f", 4, 16]} />
       <ambientLight intensity={0.22} />
       <spotLight position={[4, 8, 6]} angle={0.5} intensity={18} color="#b44cff" />
       <spotLight position={[-5, 6, 3]} angle={0.4} intensity={10} color="#2af0ff" />
@@ -231,10 +229,10 @@ export function MarketWorld({ mobile }) {
       <Stall position={[3.2, -0.4, -2.2]} color="#2af0ff" width={1.9} />
       <Stall position={[-1.6, -0.4, -4.6]} color="#ffb020" width={1.4} />
       <Stall position={[2.1, -0.4, -6.2]} color="#b44cff" />
-      <NeonSign text="夜市" color="#ff2ec8" position={[-3.6, 2.4, -1.2]} rotation={[0, 0.4, 0]} />
+      <NeonSign text="MELA" color="#ff2ec8" position={[-3.6, 2.4, -1.2]} rotation={[0, 0.4, 0]} />
       <NeonSign text="OPEN" color="#2af0ff" position={[3.4, 2.1, -2]} rotation={[0, -0.35, 0]} speed={1.3} />
       <NeonSign text="LIVE" color="#ffb020" position={[0.2, 2.8, -3.4]} rotation={[0, 0.1, 0]} speed={0.7} />
-      <NeonSign text="RAMEN" color="#ff6a1a" position={[-2.4, 1.7, -5]} rotation={[0, 0.5, 0]} />
+      <NeonSign text="CHAI" color="#ff6a1a" position={[-2.4, 1.7, -5]} rotation={[0, 0.5, 0]} />
       <Wire
         color="#ff2ec8"
         points={[
@@ -254,7 +252,7 @@ export function MarketWorld({ mobile }) {
       />
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.55, -2]}>
         <planeGeometry args={[40, 40]} />
-        <meshStandardMaterial color="#07050a" />
+        <meshStandardMaterial color="#07050a" transparent opacity={0.65} />
       </mesh>
     </group>
   )

@@ -2,6 +2,7 @@ import { lazy, Suspense, useEffect, useRef, useState } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import MagneticButton from "../components/MagneticButton"
+import SectionBackground from "../components/SectionBackground"
 import { EVENT } from "../data/content"
 import { useExperience } from "../context/ExperienceContext"
 import { useReducedMotion } from "../hooks/useReducedMotion"
@@ -82,6 +83,7 @@ export default function Hero() {
 
   return (
     <section id="hero" className="hero" ref={root}>
+      <SectionBackground image="/images/hero-bg.jpg" opacity={0.52} className="hero__atmosphere" />
       <div className="hero__stage" data-cursor="reticle">
         <Suspense fallback={<div className="hero__fallback" />}>
           <HeroCanvas active={active} />

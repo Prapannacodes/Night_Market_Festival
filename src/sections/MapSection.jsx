@@ -1,4 +1,5 @@
 import { useRef, useState } from "react"
+import SectionBackground from "../components/SectionBackground"
 import { EVENT, MAP_NODES } from "../data/content"
 import { useStampOnView } from "../hooks/useStampOnView"
 
@@ -11,6 +12,7 @@ export default function MapSection() {
 
   return (
     <section className="map" ref={root}>
+      <SectionBackground image="/images/map-bg.jpg" opacity={0.45} />
       <p className="kicker">FIND THE LIGHTS.</p>
       <h2 className="display">CITY AFTER MAPS.</h2>
       <div className="map__grid">

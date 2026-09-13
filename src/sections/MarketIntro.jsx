@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import SectionBackground from "../components/SectionBackground"
 import { INTRO_WORDS } from "../data/content"
 import { useReducedMotion } from "../hooks/useReducedMotion"
 
@@ -35,6 +36,7 @@ export default function MarketIntro() {
 
   return (
     <section id="market" className="intro" ref={root}>
+      <SectionBackground image="/images/intro-bg.jpg" opacity={0.48} />
       <p className="kicker">WHAT IS NIGHT MARKET?</p>
       <h2 className="intro__headline">
         {INTRO_WORDS.map((word) => (
