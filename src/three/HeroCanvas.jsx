@@ -16,7 +16,7 @@ export default function HeroCanvas({ active }) {
       camera={{ position: [0, 1.2, 7.2], fov: 42, near: 0.1, far: 40 }}
       frameloop={active && !reduced ? "always" : "demand"}
       onCreated={({ gl }) => {
-        gl.setClearColor("#050308", 1)
+        gl.setClearColor("#050308", 0)
       }}
     >
       <Suspense fallback={null}>

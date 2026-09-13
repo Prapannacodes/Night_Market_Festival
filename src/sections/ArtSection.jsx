@@ -1,4 +1,5 @@
 import { useRef, useState } from "react"
+import SectionBackground from "../components/SectionBackground"
 import { CREATORS } from "../data/content"
 import { useExperience } from "../context/ExperienceContext"
 import { useStampOnView } from "../hooks/useStampOnView"
@@ -11,6 +12,7 @@ export default function ArtSection() {
 
   return (
     <section className="art" ref={root}>
+      <SectionBackground image="/images/art-bg.jpg" opacity={0.48} />
       <p className="kicker">THE PEOPLE</p>
       <h2 className="display">
         MAKING
@@ -31,7 +33,12 @@ export default function ArtSection() {
             onMouseLeave={() => setActive(null)}
           >
             <div className="creator__face" aria-hidden="true">
-              {person.name.slice(0, 1)}
+              <img
+                src={person.image}
+                alt={person.name}
+                className="creator__avatar"
+                loading="lazy"
+              />
             </div>
             <h3>{person.name}</h3>
             <p>{person.discipline}</p>

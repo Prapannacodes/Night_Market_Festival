@@ -1,4 +1,5 @@
 import { useRef, useState } from "react"
+import SectionBackground from "../components/SectionBackground"
 import { DISHES } from "../data/content"
 import { useExperience } from "../context/ExperienceContext"
 import { useStampOnView } from "../hooks/useStampOnView"
@@ -11,6 +12,7 @@ export default function FoodSection() {
 
   return (
     <section id="food" className="food" ref={root}>
+      <SectionBackground image="/images/food-bg.jpg" opacity={0.48} />
       <p className="kicker">FOOD STREET</p>
       <h2 className="display">
         SCAN THE
@@ -31,14 +33,26 @@ export default function FoodSection() {
                 }}
                 onFocus={() => setActive(dish)}
               >
-                <span>{dish.glyph}</span>
-                <b>{dish.name}</b>
+                <div
+                  className="food__orb-bg"
+                  style={{ backgroundImage: `url(${dish.image})` }}
+                  aria-hidden="true"
+                />
+                <div className="food__orb-shade" aria-hidden="true" />
+                <div className="food__orb-info">
+                  <span className="food__orb-tag">{dish.tag}</span>
+                  <b>{dish.name}</b>
+                </div>
               </button>
             </li>
           ))}
         </ul>
         <aside className="scanner" aria-live="polite">
           <p>FOOD SCANNER // NM-CAM</p>
+          <div className="scanner__cam" aria-hidden="true">
+            <img src={active.image} alt={active.name} className="scanner__cam-img" />
+            <span className="scanner__crosshair" />
+          </div>
           <h3>{active.name}</h3>
           <dl>
             <div>

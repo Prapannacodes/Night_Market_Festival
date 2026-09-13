@@ -1,3 +1,4 @@
+import SectionBackground from "../components/SectionBackground"
 import { STAMPS } from "../data/content"
 import { useExperience } from "../context/ExperienceContext"
 
@@ -7,6 +8,7 @@ export default function PassportSection() {
 
   return (
     <section className="passport-sec">
+      <SectionBackground image="/images/intro-bg.jpg" opacity={0.42} />
       <p className="kicker">THE NIGHT MARKET PASSPORT</p>
       <h2 className="display">COLLECT THE NIGHT.</h2>
       <p className="lede">

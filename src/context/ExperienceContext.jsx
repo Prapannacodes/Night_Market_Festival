@@ -26,6 +26,9 @@ export function ExperienceProvider({ children }) {
   const [reward, setReward] = useState(null)
   const [passportOpen, setPassportOpen] = useState(false)
   const [sound, setSound] = useState(false)
+  const [activeVendorDrawer, setActiveVendorDrawer] = useState(null)
+  const [activePassPayment, setActivePassPayment] = useState(null)
+  const [marketToast, setMarketToast] = useState(null)
 
   useEffect(() => {
     setStamps(readJson(KEYS.stamps, []))
@@ -83,8 +86,27 @@ export function ExperienceProvider({ children }) {
       setPassportOpen,
       sound,
       setSound,
+      activeVendorDrawer,
+      setActiveVendorDrawer,
+      activePassPayment,
+      setActivePassPayment,
+      marketToast,
+      setMarketToast,
     }),
-    [ready, night, stamps, unlockStamp, highScore, reward, applyScore, passportOpen, sound],
+    [
+      ready,
+      night,
+      stamps,
+      unlockStamp,
+      highScore,
+      reward,
+      applyScore,
+      passportOpen,
+      sound,
+      activeVendorDrawer,
+      activePassPayment,
+      marketToast,
+    ],
   )
 
   return <ExperienceContext.Provider value={value}>{children}</ExperienceContext.Provider>

@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import SectionBackground from "../components/SectionBackground"
 import { CATEGORIES } from "../data/content"
 import { useReducedMotion } from "../hooks/useReducedMotion"
 
@@ -37,6 +38,7 @@ export default function CategoryGallery() {
 
   return (
     <section className="flavours" ref={section} aria-label="Market flavours">
+      <SectionBackground image="/images/categories-bg.jpg" opacity={0.45} />
       <div className="flavours__track" ref={track}>
         {CATEGORIES.map((cat) => (
           <article key={cat.id} className="flavour" style={{ "--tone": cat.tone }} data-cursor="button">

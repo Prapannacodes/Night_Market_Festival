@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react"
+import SectionBackground from "../components/SectionBackground"
 import { useExperience } from "../context/ExperienceContext"
 
 const TYPES = [
@@ -292,6 +293,7 @@ export default function ArcadeGame() {
 
   return (
     <section id="arcade" className="arcade">
+      <SectionBackground image="/images/arcade-bg.jpg" opacity={0.46} />
       <p className="kicker">PLAY THE MARKET. EARN YOUR DISCOUNT.</p>
       <h2 className="display">SHOOT THE BALLOONS.</h2>
       <p className="lede">Carnival cork gun. Thirty seconds. Gold balloons rewrite the night.</p>

@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import MagneticButton from "../components/MagneticButton"
+import SectionBackground from "../components/SectionBackground"
 import { EVENT } from "../data/content"
 import { useReducedMotion } from "../hooks/useReducedMotion"
 
@@ -36,6 +37,7 @@ export default function FinalCTA() {
 
   return (
     <section className="finale" ref={root}>
+      <SectionBackground image="/images/finale-bg.jpg" opacity={0.55} />
       <div className="finale__orb" aria-hidden="true" />
       <h2 className="finale__title">
         SEE YOU
