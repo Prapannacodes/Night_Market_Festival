@@ -1,0 +1,58 @@
+:root {
+  --void: #050308;
+  --ink: #0a0712;
+  --ink-2: #120c1c;
+  --fog: rgba(18, 10, 28, 0.55);
+  --glass: rgba(12, 8, 18, 0.42);
+  --glass-strong: rgba(8, 5, 14, 0.72);
+
+  --purple: #b44cff;
+  --magenta: #ff2ec8;
+  --cyan: #2af0ff;
+  --blue: #3d7bff;
+  --amber: #ffb020;
+  --orange: #ff6a1a;
+
+  --text: #f4eefc;
+  --text-dim: #b7a8cc;
+  --text-mute: #7d6e93;
+
+  --line: rgba(255, 46, 200, 0.28);
+  --line-cyan: rgba(42, 240, 255, 0.32);
+  --glow-magenta: 0 0 22px rgba(255, 46, 200, 0.45);
+  --glow-cyan: 0 0 22px rgba(42, 240, 255, 0.35);
+  --glow-purple: 0 0 28px rgba(180, 76, 255, 0.4);
+
+  --font-display: "Syne", sans-serif;
+  --font-body: "Outfit", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --space-1: 0.4rem;
+  --space-2: 0.75rem;
+  --space-3: 1.25rem;
+  --space-4: 2rem;
+  --space-5: 3.5rem;
+  --space-6: 6rem;
+
+  --nav-h: 5.4rem;
+  --nav-h-compact: 3.7rem;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
+
+  --grain-opacity: 0.085;
+  --vignette: 0.55;
+}
+
+html[data-night="after"] {
+  --grain-opacity: 0.16;
+  --vignette: 0.78;
+  --glow-magenta: 0 0 32px rgba(255, 46, 200, 0.7);
+  --glow-cyan: 0 0 30px rgba(42, 240, 255, 0.55);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --ease-out: ease;
+    --ease-soft: ease;
+  }
+}

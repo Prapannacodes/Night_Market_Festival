@@ -1,0 +1,92 @@
+.cursor {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+}
+
+.cursor__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.cursor__core {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 -5px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow:
+    0 0 12px rgba(42, 240, 255, 0.9),
+    0 0 28px rgba(255, 46, 200, 0.7);
+  will-change: transform;
+}
+
+.cursor__ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 42px;
+  height: 42px;
+  margin: -21px 0 0 -21px;
+  border: 1px solid rgba(42, 240, 255, 0.55);
+  border-radius: 50%;
+  box-shadow: 0 0 16px rgba(180, 76, 255, 0.25);
+  will-change: transform;
+  transition: width 0.28s var(--ease-out), height 0.28s var(--ease-out), margin 0.28s var(--ease-out),
+    border-radius 0.28s var(--ease-out), border-color 0.28s ease;
+}
+
+.cursor.is-button .cursor__ring {
+  width: 72px;
+  height: 72px;
+  margin: -36px 0 0 -36px;
+  border-color: rgba(255, 46, 200, 0.85);
+}
+
+.cursor.is-link .cursor__ring {
+  width: 56px;
+  height: 22px;
+  margin: -11px 0 0 -28px;
+  border-radius: 999px;
+  border-color: rgba(255, 176, 32, 0.8);
+}
+
+.cursor.is-reticle .cursor__ring {
+  width: 54px;
+  height: 54px;
+  margin: -27px 0 0 -27px;
+  border-radius: 2px;
+  border-color: var(--cyan);
+  transform: rotate(45deg);
+}
+
+.cursor.is-reticle .cursor__ring::before,
+.cursor.is-reticle .cursor__ring::after {
+  content: "";
+  position: absolute;
+  background: var(--cyan);
+}
+
+.cursor.is-reticle .cursor__ring::before {
+  left: 50%;
+  top: -6px;
+  width: 1px;
+  height: calc(100% + 12px);
+}
+
+.cursor.is-reticle .cursor__ring::after {
+  top: 50%;
+  left: -6px;
+  height: 1px;
+  width: calc(100% + 12px);
+}
+
+.cursor.is-hidden {
+  opacity: 0;
+}
