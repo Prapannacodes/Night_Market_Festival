@@ -494,6 +494,7 @@
   min-height: 70vh;
   border: 1px solid rgba(255, 46, 200, 0.25);
   transition: clip-path 0.6s var(--ease-out), filter 0.4s, border-color 0.4s;
+  cursor: pointer;
 }
 
 .fashion__strip span {
@@ -1596,6 +1597,61 @@ html[data-night="after"] body {
   color: var(--text);
   border-color: var(--text);
 }
+
+/* Fashion Drawer Specific Accents */
+.fashion-drawer__panel {
+  border-left-color: rgba(255, 46, 200, 0.45);
+  box-shadow: -16px 0 48px rgba(0, 0, 0, 0.8), -2px 0 24px rgba(255, 46, 200, 0.15);
+}
+
+.fashion-item-card__specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+.fashion-spec-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0.55rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 2px;
+  color: var(--text-dim);
+}
+
+.fashion-spec-chip strong {
+  color: var(--magenta);
+  font-weight: 600;
+}
+
+.fashion-item-btn:hover {
+  border-color: var(--magenta);
+  color: var(--magenta);
+  background: rgba(255, 46, 200, 0.08);
+}
+
+.fashion-item-btn.is-added {
+  background: var(--magenta);
+  color: #fff;
+  border-color: var(--magenta);
+  box-shadow: var(--glow-magenta);
+}
+
+.btn-drawer--fashion {
+  background: linear-gradient(120deg, rgba(255, 46, 200, 0.85), rgba(180, 76, 255, 0.85));
+  border-color: var(--magenta);
+}
+
+.btn-drawer--fashion:hover {
+  background: linear-gradient(120deg, rgba(255, 46, 200, 1), rgba(180, 76, 255, 1));
+}
+
 
 
 /* ==========================================================================

@@ -27,6 +27,7 @@ export function ExperienceProvider({ children }) {
   const [passportOpen, setPassportOpen] = useState(false)
   const [sound, setSound] = useState(false)
   const [activeVendorDrawer, setActiveVendorDrawer] = useState(null)
+  const [activeFashionDrawer, setActiveFashionDrawer] = useState(null)
   const [activePassPayment, setActivePassPayment] = useState(null)
   const [marketToast, setMarketToast] = useState(null)
 
@@ -88,6 +89,8 @@ export function ExperienceProvider({ children }) {
       setSound,
       activeVendorDrawer,
       setActiveVendorDrawer,
+      activeFashionDrawer,
+      setActiveFashionDrawer,
       activePassPayment,
       setActivePassPayment,
       marketToast,
@@ -104,6 +107,7 @@ export function ExperienceProvider({ children }) {
       passportOpen,
       sound,
       activeVendorDrawer,
+      activeFashionDrawer,
       activePassPayment,
       marketToast,
     ],

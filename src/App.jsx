@@ -1,4 +1,5 @@
 import CustomCursor from "./components/CustomCursor"
+import FashionSidebar from "./components/FashionSidebar"
 import GrainOverlay from "./components/GrainOverlay"
 import Loader from "./components/Loader"
 import MarketToast from "./components/MarketToast"
@@ -30,6 +31,8 @@ function ExperienceModals() {
   const {
     activeVendorDrawer,
     setActiveVendorDrawer,
+    activeFashionDrawer,
+    setActiveFashionDrawer,
     activePassPayment,
     setActivePassPayment,
     unlockStamp,
@@ -54,6 +57,10 @@ function ExperienceModals() {
       <VendorSidebar
         vendor={activeVendorDrawer}
         onClose={() => setActiveVendorDrawer(null)}
+      />
+      <FashionSidebar
+        fashion={activeFashionDrawer}
+        onClose={() => setActiveFashionDrawer(null)}
       />
       <PaymentModal
         pass={activePassPayment}
